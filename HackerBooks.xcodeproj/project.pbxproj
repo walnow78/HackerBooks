@@ -12,6 +12,17 @@
 		F5D0D5FB1ACEAAF3001D0939 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D5FA1ACEAAF3001D0939 /* Images.xcassets */; };
 		F5D0D5FE1ACEAAF3001D0939 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D5FC1ACEAAF3001D0939 /* LaunchScreen.xib */; };
 		F5D0D60A1ACEAAF3001D0939 /* HackerBooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D6091ACEAAF3001D0939 /* HackerBooksTests.m */; };
+		F5D0D6161ACEB26B001D0939 /* POLBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D6151ACEB26B001D0939 /* POLBook.m */; };
+		F5D0D61A1ACEB285001D0939 /* POLLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D6191ACEB285001D0939 /* POLLibrary.m */; };
+		F5D0D61D1ACEB2F2001D0939 /* POLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D61C1ACEB2F2001D0939 /* POLUtils.m */; };
+		F5D0D6221ACEB381001D0939 /* POLTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D6201ACEB381001D0939 /* POLTagTableViewCell.m */; };
+		F5D0D6231ACEB381001D0939 /* POLTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D6211ACEB381001D0939 /* POLTagTableViewCell.xib */; };
+		F5D0D62E1ACEB3A5001D0939 /* POLBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D6261ACEB3A5001D0939 /* POLBookViewController.m */; };
+		F5D0D62F1ACEB3A5001D0939 /* POLBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D6271ACEB3A5001D0939 /* POLBookViewController.xib */; };
+		F5D0D6301ACEB3A5001D0939 /* POLBookViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D6281ACEB3A5001D0939 /* POLBookViewController~iphone.xib */; };
+		F5D0D6311ACEB3A5001D0939 /* POLLibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D62A1ACEB3A5001D0939 /* POLLibraryTableViewController.m */; };
+		F5D0D6321ACEB3A5001D0939 /* POLPdfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D62C1ACEB3A5001D0939 /* POLPdfViewController.m */; };
+		F5D0D6331ACEB3A5001D0939 /* POLPdfViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D62D1ACEB3A5001D0939 /* POLPdfViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,24 @@
 		F5D0D6031ACEAAF3001D0939 /* HackerBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D0D6081ACEAAF3001D0939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5D0D6091ACEAAF3001D0939 /* HackerBooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackerBooksTests.m; sourceTree = "<group>"; };
+		F5D0D6141ACEB26B001D0939 /* POLBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLBook.h; sourceTree = "<group>"; };
+		F5D0D6151ACEB26B001D0939 /* POLBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLBook.m; sourceTree = "<group>"; };
+		F5D0D6181ACEB285001D0939 /* POLLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLLibrary.h; sourceTree = "<group>"; };
+		F5D0D6191ACEB285001D0939 /* POLLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLLibrary.m; sourceTree = "<group>"; };
+		F5D0D61B1ACEB2F2001D0939 /* POLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLUtils.h; sourceTree = "<group>"; };
+		F5D0D61C1ACEB2F2001D0939 /* POLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLUtils.m; sourceTree = "<group>"; };
+		F5D0D61F1ACEB381001D0939 /* POLTagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLTagTableViewCell.h; sourceTree = "<group>"; };
+		F5D0D6201ACEB381001D0939 /* POLTagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLTagTableViewCell.m; sourceTree = "<group>"; };
+		F5D0D6211ACEB381001D0939 /* POLTagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POLTagTableViewCell.xib; sourceTree = "<group>"; };
+		F5D0D6251ACEB3A5001D0939 /* POLBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLBookViewController.h; sourceTree = "<group>"; };
+		F5D0D6261ACEB3A5001D0939 /* POLBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLBookViewController.m; sourceTree = "<group>"; };
+		F5D0D6271ACEB3A5001D0939 /* POLBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POLBookViewController.xib; sourceTree = "<group>"; };
+		F5D0D6281ACEB3A5001D0939 /* POLBookViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "POLBookViewController~iphone.xib"; sourceTree = "<group>"; };
+		F5D0D6291ACEB3A5001D0939 /* POLLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLLibraryTableViewController.h; sourceTree = "<group>"; };
+		F5D0D62A1ACEB3A5001D0939 /* POLLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLLibraryTableViewController.m; sourceTree = "<group>"; };
+		F5D0D62B1ACEB3A5001D0939 /* POLPdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLPdfViewController.h; sourceTree = "<group>"; };
+		F5D0D62C1ACEB3A5001D0939 /* POLPdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLPdfViewController.m; sourceTree = "<group>"; };
+		F5D0D62D1ACEB3A5001D0939 /* POLPdfViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POLPdfViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +87,10 @@
 		F5D0D5E71ACEAAF3001D0939 = {
 			isa = PBXGroup;
 			children = (
+				F5D0D6341ACEB3AB001D0939 /* Controllers */,
+				F5D0D6241ACEB386001D0939 /* Views */,
+				F5D0D61E1ACEB2F8001D0939 /* Utils */,
+				F5D0D6171ACEB271001D0939 /* Models */,
 				F5D0D5F21ACEAAF3001D0939 /* HackerBooks */,
 				F5D0D6061ACEAAF3001D0939 /* HackerBooksTests */,
 				F5D0D5F11ACEAAF3001D0939 /* Products */,
@@ -109,6 +142,52 @@
 				F5D0D6081ACEAAF3001D0939 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5D0D6171ACEB271001D0939 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0D6141ACEB26B001D0939 /* POLBook.h */,
+				F5D0D6151ACEB26B001D0939 /* POLBook.m */,
+				F5D0D6181ACEB285001D0939 /* POLLibrary.h */,
+				F5D0D6191ACEB285001D0939 /* POLLibrary.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F5D0D61E1ACEB2F8001D0939 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0D61B1ACEB2F2001D0939 /* POLUtils.h */,
+				F5D0D61C1ACEB2F2001D0939 /* POLUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		F5D0D6241ACEB386001D0939 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0D61F1ACEB381001D0939 /* POLTagTableViewCell.h */,
+				F5D0D6201ACEB381001D0939 /* POLTagTableViewCell.m */,
+				F5D0D6211ACEB381001D0939 /* POLTagTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F5D0D6341ACEB3AB001D0939 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0D6251ACEB3A5001D0939 /* POLBookViewController.h */,
+				F5D0D6261ACEB3A5001D0939 /* POLBookViewController.m */,
+				F5D0D6271ACEB3A5001D0939 /* POLBookViewController.xib */,
+				F5D0D6281ACEB3A5001D0939 /* POLBookViewController~iphone.xib */,
+				F5D0D6291ACEB3A5001D0939 /* POLLibraryTableViewController.h */,
+				F5D0D62A1ACEB3A5001D0939 /* POLLibraryTableViewController.m */,
+				F5D0D62B1ACEB3A5001D0939 /* POLPdfViewController.h */,
+				F5D0D62C1ACEB3A5001D0939 /* POLPdfViewController.m */,
+				F5D0D62D1ACEB3A5001D0939 /* POLPdfViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +272,10 @@
 			files = (
 				F5D0D5FE1ACEAAF3001D0939 /* LaunchScreen.xib in Resources */,
 				F5D0D5FB1ACEAAF3001D0939 /* Images.xcassets in Resources */,
+				F5D0D6231ACEB381001D0939 /* POLTagTableViewCell.xib in Resources */,
+				F5D0D6301ACEB3A5001D0939 /* POLBookViewController~iphone.xib in Resources */,
+				F5D0D62F1ACEB3A5001D0939 /* POLBookViewController.xib in Resources */,
+				F5D0D6331ACEB3A5001D0939 /* POLPdfViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +293,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D0D61D1ACEB2F2001D0939 /* POLUtils.m in Sources */,
+				F5D0D6311ACEB3A5001D0939 /* POLLibraryTableViewController.m in Sources */,
 				F5D0D5F91ACEAAF3001D0939 /* AppDelegate.m in Sources */,
+				F5D0D62E1ACEB3A5001D0939 /* POLBookViewController.m in Sources */,
+				F5D0D6221ACEB381001D0939 /* POLTagTableViewCell.m in Sources */,
+				F5D0D6161ACEB26B001D0939 /* POLBook.m in Sources */,
+				F5D0D6321ACEB3A5001D0939 /* POLPdfViewController.m in Sources */,
 				F5D0D5F61ACEAAF3001D0939 /* main.m in Sources */,
+				F5D0D61A1ACEB285001D0939 /* POLLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

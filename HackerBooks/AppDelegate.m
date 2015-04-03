@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "POLLibrary.h"
+#import "POLLibraryTableViewController.h"
+#import "POLBookViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +23,72 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    // Create the model
+    
+    POLLibrary *library = [[POLLibrary alloc] init];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        
+        // For tablet
+        [self configureForPadWithModel:(POLLibrary*) library];
+        
+    }else{
+        
+        // For phone
+        [self configureForPhoneWithModel:(POLLibrary*)library];
+        
+        
+    }
+    
     return YES;
 }
+
+
+#pragma mark - Utils
+
+-(void)configureForPadWithModel:(POLLibrary*) library{
+    
+    POLBook *book = [library bookForTag:[library.tags objectAtIndex:1] atIndex:0];
+    
+    // Create the viewControllers
+    
+    POLLibraryTableViewController *tagsVC = [[POLLibraryTableViewController alloc] initWithStyle:UITableViewStylePlain
+                                                                                           model:library];
+    
+    POLBookViewController *bookVC = [[POLBookViewController alloc] initWithModel:book];
+    
+    // Create navigateControllers
+    
+    UINavigationController *tagsNC = [[UINavigationController alloc] initWithRootViewController:tagsVC];
+    UINavigationController *bookNC = [[UINavigationController alloc] initWithRootViewController:bookVC];
+    
+    // Create splitView
+    
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    
+    splitVC.viewControllers = @[tagsNC, bookNC];
+    splitVC.delegate = bookVC;
+    
+    self.window.rootViewController = splitVC;
+    
+}
+
+-(void)configureForPhoneWithModel:(POLLibrary*) library{
+    
+    POLLibraryTableViewController *tagsVC = [[POLLibraryTableViewController alloc] initWithStyle:UITableViewStylePlain
+                                                                                           model:library];
+    
+    // Create navigateControllers
+    
+    UINavigationController *tagsNC = [[UINavigationController alloc] initWithRootViewController:tagsVC];
+    
+    
+    tagsVC.delegate = tagsVC;
+    
+    self.window.rootViewController = tagsNC;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
