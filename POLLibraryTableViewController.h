@@ -8,7 +8,8 @@
 
 @import UIKit;
 
-@class POLLibrary, POLBook, POLLibraryTableViewController;
+@class POLBook, POLLibraryTableViewController;
+#import "POLLibrary.h"
 
 @protocol POLLibraryTableViewControllerDelegate <NSObject>
 
@@ -17,7 +18,7 @@
 @end
 
 
-@interface POLLibraryTableViewController : UITableViewController <POLLibraryTableViewControllerDelegate>
+@interface POLLibraryTableViewController : UITableViewController <POLLibraryTableViewControllerDelegate, POLLibraryDelegate>
 
 @property (nonatomic, strong) POLLibrary* model;
 @property (nonatomic, weak) id <POLLibraryTableViewControllerDelegate> delegate;

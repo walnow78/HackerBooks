@@ -7,7 +7,16 @@
 //
 
 @import UIKit;
-@class POLBook;
+@class POLBook, POLBookViewController;
+
+
+
+@protocol POLBookViewControllerDelegate <NSObject>
+
+-(void) bookViewController:(POLBookViewController*) bookVC didChangeStatusFavorite:(POLBook*) book;
+
+@end
+
 
 
 @interface POLBookViewController : UIViewController <UISplitViewControllerDelegate>
@@ -18,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) POLBook* model;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorActivity;
+
+@property (nonatomic,weak) id <POLBookViewControllerDelegate> delegate;
 
 - (IBAction)makeFavorite:(id)sender;
 - (IBAction)showPdf:(id)sender;

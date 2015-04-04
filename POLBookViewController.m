@@ -17,23 +17,6 @@
 
 @implementation POLBookViewController
 
-- (IBAction)makeFavorite:(id)sender {
-    
-    if ([self.favoriteSwitch isOn]) {
-        self.model.favorite = YES;
-    }else{
-        self.model.favorite = NO;
-    }
-    
-    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
-
-    
-    [defaultCenter postNotificationName:@"didBookFavorite"
-                                 object:self
-                               userInfo:@{@"book":self.model}];
-
-    
-}
 
 -(id) initWithModel:(POLBook*) model{
     
@@ -46,13 +29,6 @@
     return self;
 }
 
-- (IBAction)openPdf:(id)sender {
-    
-    POLPdfViewController *pdfVC = [[POLPdfViewController alloc] initWithModel:self.model];
-    
-    [self.navigationController pushViewController:pdfVC animated:YES];
-
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -64,7 +40,6 @@
     // Show the button library the first time
     
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     
@@ -80,11 +55,8 @@
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    
-    [center removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
 
 -(void) didChangeBook:(NSNotification*) info{
     
@@ -128,19 +100,13 @@
     
     [self.imageView.image = [UIImage alloc] init];
     
-    // Crear una cola
-    
     dispatch_queue_t download = dispatch_queue_create("download", 0);
-    
-    // Enviar el bloque que se ejecuta en 2o plano
     
     __block NSData *data;
     
     dispatch_async(download, ^{
         
         data = [utils loadFileWithUrl:self.model.urlPdf];
-        
-        // Recupero el hilo principal
         
         dispatch_queue_t principal = dispatch_get_main_queue();
         
@@ -165,5 +131,20 @@
     
     [self.navigationController pushViewController:pdfVC animated:YES];
 }
+
+- (IBAction)makeFavorite:(id)sender {
+    
+    if ([self.favoriteSwitch isOn]) {
+        self.model.favorite = YES;
+    }else{
+        self.model.favorite = NO;
+    }
+    
+    [self.delegate bookViewController:self
+              didChangeStatusFavorite:self.model];
+    
+    
+}
+
     
 @end

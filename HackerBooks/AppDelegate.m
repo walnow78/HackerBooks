@@ -70,6 +70,9 @@
     splitVC.viewControllers = @[tagsNC, bookNC];
     splitVC.delegate = bookVC;
     
+    bookVC.delegate = library;
+    library.delegate = tagsVC;
+    
     self.window.rootViewController = splitVC;
     
 }

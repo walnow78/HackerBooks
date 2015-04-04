@@ -43,46 +43,15 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-
-    
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    
-    [center addObserver:self
-               selector:@selector(didBookFavorite:)
-                   name:@"didBookFavorite"
-                 object:nil];
 
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
-    //NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    //[center removeObserver:self];
-    
-}
+#pragma mark - POLLibraryDelegate
 
--(void)viewDidUnload{
-    
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center removeObserver:self];
-
-    
-}
-
-#pragma mark - Notification from POLBookViewController
-
--(void) didBookFavorite: (NSNotification*) info{
-    
-    NSDictionary *dic = [info userInfo];
-    
-    POLBook *book = [dic objectForKey:@"book"];
-    
-    [self.model changeStatusFavorite:book];
+-(void) library:(POLLibrary *)lib didChangeModel:(POLLibrary *)model{
     
     [self.tableView reloadData];
-    
+
 }
 
 #pragma mark - Table view data source

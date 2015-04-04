@@ -44,9 +44,7 @@
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    
-    [center removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(void) didChangeBook:(NSNotification*) info{

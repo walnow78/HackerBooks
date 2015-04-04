@@ -29,32 +29,41 @@
         POLUtils *utils = [[POLUtils alloc] init];
         
         NSData *data =  [utils loadFileWithUrl:url];
+        
+        NSError *error;
+        
         if (data != nil) {
             
-            // Convert json to array
-            
-            NSError *error;
-            
-            NSArray * json = [NSJSONSerialization JSONObjectWithData:data
-                                                             options:kNilOptions
-                                                               error:&error];
-            
-            self.library = [[NSMutableArray alloc] initWithCapacity:[json count]];
+            id json = [NSJSONSerialization JSONObjectWithData:data
+                                                      options:kNilOptions
+                                                        error:&error];
             
             if (json !=nil) {
                 
-                // Read de json
-                
-                for(NSDictionary *each in json){
+                if ([json isKindOfClass: [NSDictionary class]]){
                     
-                    POLBook *book = [POLBook bookInitWithDictionary:each];
+                    POLBook *book = [POLBook bookInitWithDictionary:json];
                     
                     [self.library addObject:book];
+                    
+                }else{
+                    
+                    self.library = [[NSMutableArray alloc] initWithCapacity:[json count]];
+                    
+                    // Read de json
+                    
+                    for(NSDictionary *each in json){
+                        
+                        POLBook *book = [POLBook bookInitWithDictionary:each];
+                        
+                        [self.library addObject:book];
+                    }
                 }
                 
             }else{
                 NSLog(@"Error convert json to array: %@", error.localizedDescription);
             }
+            
         }
         
         [self convertLibraryToDictionary];
@@ -65,21 +74,21 @@
     
 }
 
-#pragma mark - Utils
+#pragma mark - POLBookViewControllerDelegate
 
--(void)changeStatusFavorite:(POLBook*) favorite{
+-(void) bookViewController:(POLBookViewController *)bookVC didChangeStatusFavorite:(POLBook *)book{
     
     for (POLBook* each in self.library) {
-        if (each.title == favorite.title){
+        if (each.title == book.title){
             
-            each.favorite = favorite.favorite;
+            each.favorite = book.favorite;
             
             NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
             
-            if (favorite.favorite == YES) {
-                [ud setObject:favorite.title forKey:favorite.title];
+            if (book.favorite == YES) {
+                [ud setObject:book.title forKey:book.title];
             }else{
-                [ud removeObjectForKey:favorite.title];
+                [ud removeObjectForKey:book.title];
             }
             
             [ud synchronize];
@@ -88,7 +97,25 @@
     
     [self convertLibraryToDictionary];
     
+    
+    // alert to delegate
+    
+    [self.delegate library:self didChangeModel:self];
+    
+//    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+//    
+//    
+//    [defaultCenter postNotificationName:@"didBookFavorite"
+//                                 object:self
+//                               userInfo:@{@"book":self.model}];
+    
+    
 }
+
+
+
+#pragma mark - Utils
+
 
 -(void) convertLibraryToDictionary{
     
@@ -132,16 +159,19 @@
     
     self.tags = [[self.libraryByTag allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
-    [self.libraryByTag setValue:fav forKey:@"Favorites"];
-    
-    // Add the Favorites to array tags
-    
-    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
-    [mutableArray addObject:@"Favorites"];
-    [mutableArray addObjectsFromArray:self.tags];
-    
-    self.tags = mutableArray;
-    
+    if ([fav count] > 0) {
+        
+        [self.libraryByTag setValue:fav forKey:@"Favorites"];
+        
+        // Add the Favorites to array tags
+        
+        NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+        [mutableArray addObject:@"Favorites"];
+        [mutableArray addObjectsFromArray:self.tags];
+        
+        self.tags = mutableArray;
+        
+    }
 }
 
 #pragma mark - public

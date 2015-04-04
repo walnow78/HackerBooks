@@ -8,12 +8,24 @@
 
 @import Foundation;
 
-@class POLBook;
+@class POLBook, POLLibrary;
 
-@interface POLLibrary : NSObject
+
+#import "POLBookViewController.h"
+
+
+@protocol POLLibraryDelegate <NSObject>
+
+-(void) library:(POLLibrary*) lib didChangeModel:(POLLibrary*) model;
+
+@end
+
+@interface POLLibrary : NSObject <POLBookViewControllerDelegate>
 
 @property(nonatomic,strong) NSMutableDictionary *libraryByTag;
 @property(nonatomic,strong) NSArray* tags;
+
+@property (nonatomic,weak) id <POLLibraryDelegate> delegate;
 
 -(id) init;
 
@@ -23,8 +35,6 @@
 -(NSUInteger) bookCountForTag:(NSString*) tag;
 -(NSArray*) booksForTag: (NSString *) tag;
 -(POLBook*) bookForTag:(NSString*) tag atIndex:(NSUInteger) index;
-
--(void)changeStatusFavorite:(POLBook*) favorite;
 
 @end
 
