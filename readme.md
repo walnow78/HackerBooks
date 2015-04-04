@@ -2,8 +2,8 @@
 
 ** ¿En que se distingue isKindOfClass de isMemberOfClass?** 
 
-El método isKindOfClass devuelve YES cuando el objeto es o hereda de la clase indicada
-El método isMemberOfClass devuelve YES cuando el objeto es de la clase indicada
+El método *isKindOfClass* devuelve YES cuando el objeto es o hereda de la clase indicada
+El método *isMemberOfClass* devuelve YES cuando el objeto es de la clase indicada
 
 **¿Donde guardarías las imagenes de la portada y los datos?**
 
