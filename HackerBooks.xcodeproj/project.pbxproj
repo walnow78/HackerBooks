@@ -23,8 +23,6 @@
 		F5D0D6311ACEB3A5001D0939 /* POLLibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D62A1ACEB3A5001D0939 /* POLLibraryTableViewController.m */; };
 		F5D0D6321ACEB3A5001D0939 /* POLPdfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0D62C1ACEB3A5001D0939 /* POLPdfViewController.m */; };
 		F5D0D6331ACEB3A5001D0939 /* POLPdfViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D62D1ACEB3A5001D0939 /* POLPdfViewController.xib */; };
-		F5D0D6361ACF0D20001D0939 /* bookmark49.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D6351ACF0D20001D0939 /* bookmark49.png */; };
-		F5D0D6381ACF0D2A001D0939 /* bookmark53.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D0D6371ACF0D2A001D0939 /* bookmark53.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +64,6 @@
 		F5D0D62B1ACEB3A5001D0939 /* POLPdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POLPdfViewController.h; sourceTree = "<group>"; };
 		F5D0D62C1ACEB3A5001D0939 /* POLPdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POLPdfViewController.m; sourceTree = "<group>"; };
 		F5D0D62D1ACEB3A5001D0939 /* POLPdfViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POLPdfViewController.xib; sourceTree = "<group>"; };
-		F5D0D6351ACF0D20001D0939 /* bookmark49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark49.png; path = ../bookmark49.png; sourceTree = "<group>"; };
-		F5D0D6371ACF0D2A001D0939 /* bookmark53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark53.png; path = ../bookmark53.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +109,6 @@
 		F5D0D5F21ACEAAF3001D0939 /* HackerBooks */ = {
 			isa = PBXGroup;
 			children = (
-				F5D0D6371ACF0D2A001D0939 /* bookmark53.png */,
-				F5D0D6351ACF0D20001D0939 /* bookmark49.png */,
 				F5D0D5F71ACEAAF3001D0939 /* AppDelegate.h */,
 				F5D0D5F81ACEAAF3001D0939 /* AppDelegate.m */,
 				F5D0D5FA1ACEAAF3001D0939 /* Images.xcassets */,
@@ -278,12 +272,10 @@
 			files = (
 				F5D0D5FE1ACEAAF3001D0939 /* LaunchScreen.xib in Resources */,
 				F5D0D5FB1ACEAAF3001D0939 /* Images.xcassets in Resources */,
-				F5D0D6361ACF0D20001D0939 /* bookmark49.png in Resources */,
 				F5D0D6231ACEB381001D0939 /* POLTagTableViewCell.xib in Resources */,
 				F5D0D6301ACEB3A5001D0939 /* POLBookViewController~iphone.xib in Resources */,
 				F5D0D62F1ACEB3A5001D0939 /* POLBookViewController.xib in Resources */,
 				F5D0D6331ACEB3A5001D0939 /* POLPdfViewController.xib in Resources */,
-				F5D0D6381ACF0D2A001D0939 /* bookmark53.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -102,14 +102,6 @@
     
     [self.delegate library:self didChangeModel:self];
     
-//    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
-//    
-//    
-//    [defaultCenter postNotificationName:@"didBookFavorite"
-//                                 object:self
-//                               userInfo:@{@"book":self.model}];
-    
-    
 }
 
 
